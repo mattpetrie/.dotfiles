@@ -7,7 +7,7 @@
 
 - link:
     ~/.dotfiles: ''
-    ~/.gitconfig: git/gitcofig
+    ~/.gitconfig: git/gitconfig
     ~/.gitignore_global: git/gitignore_global
     ~/.spacemacs: spacemacs/spacemacs 
     ~/.zshrc: zsh/zshrc
@@ -15,7 +15,7 @@
     ~/.zprofile: zsh/zprofile
     ~/.zlogin: zsh/zlogin
     ~/.zlogout: zsh/zlogout
-    ~/.zpreztorc: zsh/zspreztorc
+    ~/.zpreztorc: zsh/zpreztorc
 
 - shell:
   - [git submodule update --init --recursive, Install submodules]
