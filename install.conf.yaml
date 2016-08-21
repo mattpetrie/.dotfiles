@@ -1,0 +1,22 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.dotfiles: ''
+    ~/.gitconfig: git/gitcofig
+    ~/.gitignore_global: git/gitignore_global
+    ~/.spacemacs: spacemacs/spacemacs 
+    ~/.zshrc: zsh/zshrc
+    ~/.zshenv: zsh/zshenv
+    ~/.zprofile: zsh/zprofile
+    ~/.zlogin: zsh/zlogin
+    ~/.zlogout: zsh/zlogout
+    ~/.zpreztorc: zsh/zspreztorc
+
+- shell:
+  - [git submodule update --init --recursive, Install submodules]
+    
