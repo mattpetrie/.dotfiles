@@ -32,6 +32,7 @@ values."
      lua
      markdown
      ;; org
+     react
      (shell :variables
             shell-default-height 50
             shell-default-position 'bottom)
@@ -270,6 +271,14 @@ you should place your code here."
   (setq js2-strict-missing-semi-warning nil)
   (setq js2-strict-trailing-comma-warning nil)
 
+  ;; use eslint with web-mode for jsx files
+  (defun jsx/init-flycheck ()
+    (use-package flycheck
+      :defer t
+      :config
+      (progn
+        (flycheck-add-mode 'javascript-eslint 'web-mode))))
+
   ;; Use projects' local version of eslint when available
   (defun my/use-eslint-from-node-modules ()
     (let* ((root (locate-dominating-file
@@ -282,7 +291,6 @@ you should place your code here."
         (setq-local flycheck-javascript-eslint-executable eslint))))
 
   (add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
-  
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
