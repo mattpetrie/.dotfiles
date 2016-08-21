@@ -26,6 +26,11 @@ alias up="../"
 alias up2="../../"
 alias up3="../../../"
 alias a="atom"
+alias dk="docker"
+alias g="hub"
+
+# Emacs
+export VISUAL="emacs"
 
 #NVM
 export NVM_DIR="/home/matt/.nvm"
