@@ -1,0 +1,19 @@
+[user]
+	name = Matt Petrie
+	email = matthew.petrie@gmail.com
+[alias]
+	aa = add --all
+	br = branch
+	ci = commit
+	co = checkout
+	df = diff
+	last  = log -1 HEAD
+	lg = log -p
+	st = status
+	unstage = reset HEAD --
+[core]
+	editor = emacs
+	excludesfile = /home/matt/.gitignore_global
+[push]
+	default = simple
+	
