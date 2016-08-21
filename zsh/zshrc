@@ -1,0 +1,44 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customize to your needs...
+
+# K for awesome directory listings: https://github.com/supercrabtree/k
+source $HOME/k/k.sh
+
+# Enable Warp Drive for directory switching
+fpath=(~/path/to/wd $fpath)
+wd() {
+  . ~/bin/wd/wd.sh
+}
+
+# Aliases
+alias up="../"
+alias up2="../../"
+alias up3="../../../"
+alias a="atom"
+
+#NVM
+export NVM_DIR="/home/matt/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# RVM
+source ~/.rvm/scripts/rvm
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# Hub for github
+eval "$(hub alias -s)"
+fpath=(~/.zsh/completions $fpath)
+autoload -U compinit && compinit
+
+# Direnv
+eval "$(direnv hook zsh)"
