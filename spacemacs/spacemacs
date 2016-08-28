@@ -41,7 +41,7 @@ values."
      ruby
      ruby-on-rails
      (shell :variables
-            shell-default-height 50
+            shell-default-height 40
             shell-default-position 'bottom)
      spell-checking
      syntax-checking
