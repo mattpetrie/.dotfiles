@@ -29,6 +29,11 @@ alias a="atom"
 alias dk="docker"
 alias g="hub"
 
+# Terminal Environment (Helps w/ Emacs' ansi-term in OSX)
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export TERM=xterm-256color
+
 # Emacs
 export VISUAL="emacs"
 
