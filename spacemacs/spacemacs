@@ -36,6 +36,7 @@ values."
      lua
      markdown
      ;; org
+     osx
      react
      ruby
      ruby-on-rails
