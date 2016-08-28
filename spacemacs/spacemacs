@@ -38,11 +38,14 @@ values."
      ;; org
      osx
      react
+     restclient
      ruby
      ruby-on-rails
+     search-engine
      (shell :variables
             shell-default-height 40
             shell-default-position 'bottom)
+     speed-reading
      spell-checking
      syntax-checking
      version-control
