@@ -37,9 +37,9 @@ export TERM=xterm-256color
 # Emacs
 export VISUAL="emacs"
 
-#NVM
-export NVM_DIR="/home/matt/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# NVM
+source ~/.zsh-nvm/zsh-nvm.plugin.zsh
+source ~/.zsh-better-npm-completion/zsh-better-npm-completion.plugin.zsh
 
 # RVM
 source ~/.rvm/scripts/rvm
