@@ -32,7 +32,7 @@ alias gpr="hub pull --rebase"
 alias be="bundle exec"
 
 # Emacs
-export VISUAL="emacs"
+alias e="emacsclient -n"
 
 # NVM
 source ~/.zsh-nvm/zsh-nvm.plugin.zsh
