@@ -9,17 +9,17 @@
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
-
 # Customize to your needs...
 
 # K for awesome directory listings: https://github.com/supercrabtree/k
 source $HOME/k/k.sh
 
 # Enable Warp Drive for directory switching
-fpath=(~/path/to/wd $fpath)
+fpath=(~/bin/wd $fpath)
 wd() {
-  . ~/bin/wd/wd.sh
+  . $HOME/bin/wd/wd.sh
 }
+
 
 # Aliases
 alias up="../"
