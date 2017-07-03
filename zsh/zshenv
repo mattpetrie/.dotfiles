@@ -9,3 +9,12 @@
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+# Terminal Environment (Helps w/ Emacs' ansi-term in OSX)
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export TERM=xterm-256color
+
+# RVM (This has to go last because RVM is annoying
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
