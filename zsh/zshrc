@@ -40,11 +40,12 @@ source ~/.zsh-better-npm-completion/zsh-better-npm-completion.plugin.zsh
 
 # RVM
 source ~/.rvm/scripts/rvm
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Hub for github
 eval "$(hub alias -s)"
-fpath=(~/.zsh/completions $fpath)
+
+# zsh completions
+fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -U compinit && compinit
 
 # Direnv
