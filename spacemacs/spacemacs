@@ -294,8 +294,10 @@ you should place your code here."
   (setq js2-strict-trailing-comma-warning nil)
 
   ;; use prettier-js on save for js/jsx files
-  (add-hook 'js2-mode-hook 'prettier-js-mode)
-  (add-hook 'web-mode-hook 'prettier-js-mode)
+  ;; these can be uncommented once prettier supports options for arrow function parens :(
+  ;; (add-hook 'js2-mode-hook 'prettier-js-mode)
+  ;; (add-hook 'web-mode-hook 'prettier-js-mode)
+
   (setq prettier-js-args '(
                            "--single-quote"
                            ))
