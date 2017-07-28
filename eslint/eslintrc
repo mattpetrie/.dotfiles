@@ -1,6 +1,16 @@
 {
-  "extends": "airbnb",
+  "extends": [
+    "airbnb",
+    "prettier",
+    "prettier/react"
+  ],
+  "plugins": [
+    "prettier"
+  ],
   "rules": {
-    "semi": [2, "never"]
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "prettier/prettier": ["error", {"singleQuote": true, "semi": false, "trailingComma": "es5"}]
+    "react/forbid-prop-types": "off",
+    "react/require-default-props": "off"
   }
 }
