@@ -15,8 +15,6 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export TERM=xterm-256color
 
-# default to setting Node environment to development
+# default to setting Node & Babel environment to development
 export NODE_ENV=development
-
-# RVM (This has to go last because RVM is annoying
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export BABEL_ENV=development

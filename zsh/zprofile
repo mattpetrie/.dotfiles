@@ -72,3 +72,7 @@ if [[ ! -d "$TMPDIR" ]]; then
 fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
+
+# Use asdf for Node/Ruby/Erlang version management
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
