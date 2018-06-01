@@ -69,6 +69,12 @@ values."
    '(
      eslintd-fix
      graphql-mode
+     (reason-mode
+      :location (recipe
+                 :repo "reasonml-editor/reason-mode"
+                 :fetcher github
+                 :files ("reason-mode.el" "refmt.el" "reason-indent.el" "reason-interaction.el")))
+
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages
@@ -338,6 +344,37 @@ you should place your code here."
   ;; automatically fix eslint errors on save
   (add-hook 'js2-mode-hook 'eslintd-fix-mode)
   (add-hook 'web-mode-hook 'eslintd-fix-mode)
+
+  ;;----------------------------------------------------------------------------
+  ;; Reason setup
+  ;;----------------------------------------------------------------------------
+
+  (defun shell-cmd (cmd)
+    "Returns the stdout output of a shell command or nil if the command returned
+    an error"
+    (car (ignore-errors (apply 'process-lines (split-string cmd)))))
+
+  (let* ((refmt-bin (or (shell-cmd "refmt ----where")
+                        (shell-cmd "which refmt")))
+        (merlin-bin (or (shell-cmd "ocamlmerlin ----where")
+                        (shell-cmd "which ocamlmerlin")))
+        (merlin-base-dir (when merlin-bin
+                            (replace-regexp-in-string "bin/ocamlmerlin$" "" merlin-bin))))
+    ;; Add npm merlin.el to the emacs load path and tell emacs where to find ocamlmerlin
+    (when merlin-bin
+      (add-to-list 'load-path (concat merlin-base-dir "share/emacs/site-lisp/"))
+      (setq merlin-command merlin-bin))
+
+    (when refmt-bin
+      (setq refmt-command refmt-bin)))
+
+  (require 'reason-mode)
+  (require 'merlin)
+  (add-hook 'reason-mode-hook (lambda ()
+                                (add-hook 'before-save-hook 'refmt-before-save)
+                                (merlin-mode)))
+
+  (setq merlin-ac-setup t)
 
   ;; start emacs server so files can be opened from the terminal
   (server-start)
