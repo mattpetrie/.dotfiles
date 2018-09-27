@@ -42,3 +42,11 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# JetBrains IDE configuration files #
+#####################################
+**/.idea/
+
+# Tide/Intellisense configuration files #
+#########################################
+jsconfig.json
