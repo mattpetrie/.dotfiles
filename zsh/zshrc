@@ -24,7 +24,6 @@ wd() {
 alias up="../"
 alias up2="../../"
 alias up3="../../../"
-alias a="atom"
 alias dk="docker"
 alias g="hub"
 alias gpr="hub pull --rebase"
@@ -45,3 +44,9 @@ autoload -U compinit && compinit
 
 # Direnv
 eval "$(direnv hook zsh)"
+
+# OPAM configuration
+. /Users/mattpetrie/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+# added by travis gem
+[ -f /Users/mattpetrie/.travis/travis.sh ] && source /Users/mattpetrie/.travis/travis.sh

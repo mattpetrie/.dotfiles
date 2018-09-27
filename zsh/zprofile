@@ -74,5 +74,14 @@ fi
 TMPPREFIX="${TMPDIR%/}/zsh"
 
 # Use asdf for Node/Ruby/Erlang version management
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+[ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh
+[ -f ~/.asdf/completions/asdf.bash ] && source ~/.asdf/completions/asdf.bash
+
+# Ensure fastlane is in path for mobile app deployments
+export PATH="$HOME/.fastlane/bin:$PATH"
+
+# Ensure PHP is in path
+export PATH="/usr/local/opt/php@7.1/bin:$PATH"
+export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
+
+export PATH="$HOME/.composer/vendor/bin:$PATH"
