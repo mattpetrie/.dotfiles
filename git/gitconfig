@@ -12,7 +12,12 @@
 	st = status
 	unstage = reset HEAD --
 [core]
-	editor = emacsclient --alternate-editor="emacs"
-	excludesfile = ~/.gitignore_global
+	editor = code --wait
+	excludesfile = ~/.gitignore
 [push]
 	default = simple
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

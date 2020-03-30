@@ -3,15 +3,12 @@
       create: true
       relink: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - link:
-    ~/.dotfiles: ''
-    ~/.tool-versions: asdf/tool-versions
-    ~/.eslintrc: eslint/eslintrc
+    ~/dotfiles: ""
     ~/.gitconfig: git/gitconfig
-    ~/.gitignore_global: git/gitignore_global
-    ~/.spacemacs: spacemacs/spacemacs
+    ~/.gitignore: git/gitignore
     ~/.zshrc: zsh/zshrc
     ~/.zshenv: zsh/zshenv
     ~/.zprofile: zsh/zprofile
@@ -20,4 +17,5 @@
     ~/.zpreztorc: zsh/zpreztorc
 
 - shell:
-  - [git submodule update --init --recursive, Install submodules]
+    - [git submodule update --init --recursive, Install submodules]
+    - [chsh -s $(which zsh), Making zsh the default shell]
