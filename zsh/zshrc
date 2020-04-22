@@ -12,6 +12,9 @@ fi
 
 # Customize to your needs...
 
+# zsh github completions (https://github.com/zsh-users/zsh-completions)
+fpath=(usr/local/share/zsh-completions/src $fpath)
+
 # Use asdf version manager
 . /usr/local/opt/asdf/asdf.sh
 
