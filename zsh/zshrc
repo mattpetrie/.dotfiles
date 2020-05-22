@@ -17,6 +17,15 @@ fpath=(usr/local/share/zsh-completions/src $fpath)
 
 # Use asdf version manager
 . /usr/local/opt/asdf/asdf.sh
+fpath=(${ASDF_DIR}/completions $fpath)
+
+# ensure zsh completions for homebrew packages is enabled
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
+# zsh github completions (https://github.com/zsh-users/zsh-completions)
+fpath=(usr/local/share/zsh-completions/src $fpath)
 
 # Aliases
 alias up="../"
