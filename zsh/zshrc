@@ -18,7 +18,7 @@ get_secure_value () {
 }
 
 # Good Eggs "ranch" infra deploy CLI needs this key
-export RANCH_KEY="$(get_secure_value ranch)"
+export RANCH_TOKEN="$(get_secure_value ranch)"
 
 # Use asdf version manager
 . /usr/local/opt/asdf/asdf.sh
